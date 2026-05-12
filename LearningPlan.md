@@ -36,7 +36,7 @@ You're new to JavaScript, which is React's foundation. This plan prioritizes **u
 **Focus:** Get React running. Understand JSX, components, and state basics.
 
 ### Learning Goals
-- Install Node.js and create your first React app (Create React App) ✅ (done!)
+- Have a React development environment set up with Vite ✅ (done!)
 - Understand JSX syntax and how it compiles to JavaScript
 - Build simple functional components
 - Learn the difference between props and state
@@ -60,7 +60,7 @@ You're new to JavaScript, which is React's foundation. This plan prioritizes **u
    - Only read if you hit JavaScript concepts you don't understand in React examples
 
 ### Milestones (check your progress)
-- [ ] Node.js and npm installed; `npx create-react-app` works
+- [ ] Vite + React development environment set up and running (`npm run dev`)
 - [ ] Can create a simple functional component and render it
 - [ ] Understand the difference between JSX and regular JavaScript
 - [ ] Built a component that uses `props` to display different content
@@ -289,13 +289,14 @@ Create a repository called `cs490r-frontend` (or similar) with this structure:
 cs490r-frontend/
 ├── LearningPlan.md          (this file)
 ├── src/
-│   ├── App.js
+│   ├── App.jsx
 │   ├── App.css
-│   ├── index.js
+│   ├── main.jsx
 │   └── components/          (add components here as you build)
 ├── public/
+├── index.html
+├── vite.config.js
 ├── package.json
-├── package-lock.json
 ├── .gitignore
 └── README.md
 ```
@@ -313,6 +314,21 @@ cs490r-frontend/
 ```
 
 Either way is fine—just commit as you go.
+
+**To set up a new React project with Vite:**
+
+```bash
+npm create vite@latest cs490r-frontend -- --template react
+cd cs490r-frontend
+npm install
+npm run dev
+```
+
+This starts a development server on `http://localhost:5173`.
+
+**Note on Express:** Your Express backend runs separately (typically on `http://localhost:3000` or another port). Your React app (Vite) communicates with it via HTTP requests. They are two separate applications.
+
+Then edit `src/App.jsx` to start building your components.
 
 ---
 
