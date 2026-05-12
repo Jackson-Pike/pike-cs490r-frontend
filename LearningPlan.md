@@ -301,19 +301,6 @@ cs490r-frontend/
 └── README.md
 ```
 
-Or create separate folders for each week:
-
-```
-cs490r-frontend/
-├── LearningPlan.md
-├── week1/
-├── week2/
-├── week3/
-├── week4/
-└── final-project/
-```
-
-Either way is fine—just commit as you go.
 
 **To set up a new React project with Vite:**
 
