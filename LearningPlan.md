@@ -1,7 +1,7 @@
 # React Learning Plan - CS 490R Frontend Development
 
 **Technology:** React (with Express.js backend integration)  
-**Timeline:** 4 weeks (May 18 - June 15)  
+**Timeline:** 4 weeks (May 13 - June 9, 2026)  
 **Available Time:** ~2-3 hours/weekday (1 PM - 8 PM, accounting for classes), ~4-6 hours/weekend  
 **Goal:** Build a working React frontend that connects to your Express REST API with authentication
 
@@ -19,12 +19,24 @@ You're new to JavaScript, which is React's foundation. This plan prioritizes **u
 
 ---
 
-## Week 1 (May 18-24): React Fundamentals & JavaScript Bootcamp
-**LFE 2 Due:** Tuesday, May 20 at 9:59 AM  
+## 🚨 CRITICAL DATES (HST - Hawaii Standard Time)
+
+| Assignment | Due Date | Due Time | Days Away |
+|------------|----------|----------|-----------|
+| **LFE 2** | Tuesday, May 19 | 11:59 PM HST | 7 days |
+| **LFE 3** | Tuesday, May 26 | 11:59 PM HST | 14 days |
+| **LFE 4** | Tuesday, June 2 | 11:59 PM HST | 21 days |
+| **LFE 5** | Tuesday, June 9 | 11:59 PM HST | 28 days |
+| **Final Project** | Monday, June 23 | TBD | 42 days |
+
+---
+
+## Week 1 (May 13-19): React Fundamentals & JavaScript Bootcamp
+**LFE 2 Due:** Tuesday, May 19 at 11:59 PM HST  
 **Focus:** Get React running. Understand JSX, components, and state basics.
 
 ### Learning Goals
-- Install Node.js and create your first React app (Create React App)
+- Install Node.js and create your first React app (Create React App) ✅ (done!)
 - Understand JSX syntax and how it compiles to JavaScript
 - Build simple functional components
 - Learn the difference between props and state
@@ -54,7 +66,7 @@ You're new to JavaScript, which is React's foundation. This plan prioritizes **u
 - [ ] Built a component that uses `props` to display different content
 - [ ] Built a component with `useState` that increments a counter on button click
 
-### Weekly Deliverable for LFE 2 (Due May 20)
+### Weekly Deliverable for LFE 2 (Due May 19, 11:59 PM HST)
 Create a **simple interactive app** in your GitHub repo:
 - A React component that displays "Hello React!" and has:
   - At least one piece of state (e.g., a counter, color, name input)
@@ -64,15 +76,15 @@ Create a **simple interactive app** in your GitHub repo:
 - Screencast: Show the app working, explain what state is, and show your Learning Plan
 
 ### Time Allocation
-- Monday-Thursday: 2 hours/day on Scrimba (8 hours total)
-- Friday: 1 hour review + set up GitHub repo
-- Weekend: Build the interactive component for LFE 2 (3-4 hours)
-- **Total: ~12-13 hours**
+- **Mon-Fri (May 13-17):** 2 hours/day on learning (10 hours total)
+- **Sat-Sun (May 18-19):** Build the interactive component for LFE 2 (3-4 hours)
+- **CS 420:** ~2-3 hours/week (parallel, doesn't interfere)
+- **Total Frontend:** ~13-14 hours
 
 ---
 
-## Week 2 (May 25-31): Components, Events & Styling
-**LFE 3 Due:** Wednesday, May 27 at 9:59 AM  
+## Week 2 (May 20-26): Components, Events & Styling
+**LFE 3 Due:** Tuesday, May 26 at 11:59 PM HST  
 **Focus:** Move beyond simple state. Build multi-component apps. Handle forms.
 
 ### Learning Goals
@@ -104,7 +116,7 @@ Create a **simple interactive app** in your GitHub repo:
 - [ ] Used conditional rendering (if/else or ternary operator) in a component
 - [ ] Added CSS styling that makes your app look presentable
 
-### Weekly Deliverable for LFE 3 (Due May 27)
+### Weekly Deliverable for LFE 3 (Due May 26, 11:59 PM HST)
 Build a **small project** that demonstrates all Week 2 concepts:
 - **Idea examples:**
   - A To-Do List (add/remove/check off items)
@@ -120,15 +132,16 @@ Build a **small project** that demonstrates all Week 2 concepts:
 - Screencast: Demonstrate the app working, explain what you learned about components/props, check off milestones
 
 ### Time Allocation
-- Monday-Wednesday (before LFE 3 due): 2 hours/day learning + 1 hour building (9 hours)
-- Thursday-Friday: Build your project (4 hours)
-- Weekend: Polish & screencast (2 hours)
-- **Total: ~15 hours**
+- **Mon-Fri (May 20-24):** 2 hours/day learning + 1 hour building (15 hours)
+- **Sat-Sun (May 25-26):** Polish & screencast (2-3 hours)
+- **CS 420:** ~2-3 hours/week (parallel)
+- **CS 490R API:** ~4-5 hours/week (parallel - API should be mostly done by now)
+- **Total Frontend:** ~15-17 hours
 
 ---
 
-## Week 3 (June 1-7): Fetching Data & API Integration
-**Learn Frontend 4 Due:** Wednesday, June 4 (projected)  
+## Week 3 (May 27-June 2): Fetching Data & API Integration
+**Learn Frontend 4 Due:** Tuesday, June 2 at 11:59 PM HST  
 **Focus:** Connect to backend APIs. Learn async/await. Handle loading and error states.
 
 ### Learning Goals
@@ -140,18 +153,17 @@ Build a **small project** that demonstrates all Week 2 concepts:
 - Make authenticated API requests (prep for next week)
 
 ### Recommended Resources
-1. **Scrimba: Async/Await & Fetch** (if available) OR
-2. **React Docs: Fetching Data with useEffect** (CRITICAL)
+1. **React Docs: Fetching Data with useEffect** (CRITICAL)
    - Link: https://react.dev/learn/synchronizing-with-effects
    - Time: 1.5 hours
    - This is the foundation for API calls in React
 
-3. **JavaScript.info: Promises, Async/Await** (2 hours)
+2. **JavaScript.info: Promises, Async/Await** (2 hours)
    - Link: https://javascript.info/promise-basics
    - Read: Promise Basics, Async/Await sections
    - Why: You need to understand async concepts to work with APIs
 
-4. **Building a Real API Call Example** (1 hour)
+3. **Building a Real API Call Example** (1 hour)
    - Use a public API (e.g., JSONPlaceholder, OpenWeather) to practice
    - Example: Fetch a list of posts, display them in your React app
 
@@ -163,7 +175,7 @@ Build a **small project** that demonstrates all Week 2 concepts:
 - [ ] Handled and displayed error messages when API call fails
 - [ ] Made a request that includes authentication headers (prep for week 4)
 
-### Weekly Deliverable for Learn Frontend 4 (Due June 4)
+### Weekly Deliverable for Learn Frontend 4 (Due June 2, 11:59 PM HST)
 Build a **data-fetching app** that pulls from an API:
 - **Option 1 (Simpler):** Use a public API (JSONPlaceholder, OpenWeather, etc.)
   - Fetch and display a list of items (posts, weather, repos, etc.)
@@ -178,15 +190,17 @@ Build a **data-fetching app** that pulls from an API:
 - Screencast: Show data being fetched and displayed, explain async/await, demonstrate error handling
 
 ### Time Allocation
-- Monday-Wednesday: 2 hours/day learning async concepts (6 hours)
-- Thursday-Friday: Build your data-fetching app (4-5 hours)
-- Weekend: Refine and record screencast (3 hours)
-- **Total: ~13-14 hours**
+- **Mon-Fri (May 27-June 1):** 2 hours/day learning async concepts (10 hours)
+- **Wed-Fri:** 2 hours/day building your data-fetching app (6 hours)
+- **Sat-Sun:** Refine and record screencast (3 hours)
+- **CS 420:** ~2-3 hours/week (parallel)
+- **CS 490R API:** ~1-2 hours/week (finishing touches)
+- **Total Frontend:** ~13-15 hours
 
 ---
 
-## Week 4 (June 8-15): Authentication & API Integration
-**Learn Frontend 5 Due:** Wednesday, June 11 (projected)  
+## Week 4 (June 3-9): Authentication & API Integration
+**Learn Frontend 5 Due:** Tuesday, June 9 at 11:59 PM HST  
 **Focus:** Build login/authentication. Connect to your Express API with auth tokens.
 
 ### Learning Goals
@@ -221,7 +235,7 @@ Build a **data-fetching app** that pulls from an API:
 - [ ] Created a protected component (redirects to login if not authenticated)
 - [ ] Successfully logged in, made authenticated API requests, logged out
 
-### Weekly Deliverable for Learn Frontend 5 (Due June 11)
+### Weekly Deliverable for Learn Frontend 5 (Due June 9, 11:59 PM HST)
 Build a **complete authenticated React app** that connects to your Express backend:
 - **Login Screen:** Username/password form
   - Sends POST request to your backend `/login` endpoint
@@ -242,21 +256,23 @@ Build a **complete authenticated React app** that connects to your Express backe
 - Screencast: Demonstrate login flow, show authenticated request, explain how tokens work
 
 ### Time Allocation
-- Monday-Wednesday: 2 hours/day learning auth concepts (6 hours)
-- Thursday-Friday: Build auth + integrate with backend (5-6 hours)
-- Weekend: Test everything, refine, screencast (3 hours)
-- **Total: ~14-15 hours**
+- **Mon-Fri (June 3-7):** 2 hours/day learning auth concepts (10 hours)
+- **Wed-Fri:** 2 hours/day building auth + integrating backend (6 hours)
+- **Sat-Sun:** Test everything, refine, screencast (3 hours)
+- **CS 420:** ~2-3 hours/week (parallel + exam prep)
+- **CS 490R API:** ~1 hour/week (final tweaks)
+- **Total Frontend:** ~13-15 hours
 
 ---
 
 ## Integration with Your Express API
 
-**Timing:** Your backend assignments (Express serves an API) are due May 23 (Phase 1-3). By Week 3, you should be building your backend, so you can use it in Week 3-4 frontend work.
+**Timing:** Your backend assignments are due May 23. By Week 3, you should be building your backend, so you can use it in Week 3-4 frontend work.
 
 **Recommended Backend Schedule:**
-- Week 1: Basic CRUD API for one entity (do this alongside LFE 1-2)
-- Week 2-3: Add related models and authentication endpoints
-- Week 4: Frontend calls your backend endpoints
+- Week 1-2: Basic CRUD API for one entity + related models
+- Week 2-3: Add authentication endpoints
+- Week 3-4: Frontend calls your backend endpoints
 
 **Authentication Endpoints Your Backend Should Have (by Week 3):**
 - `POST /api/auth/register` — Create new user
@@ -272,41 +288,45 @@ Create a repository called `cs490r-frontend` (or similar) with this structure:
 ```
 cs490r-frontend/
 ├── LearningPlan.md          (this file)
-├── week1/                   (LFE 2 deliverable)
-│   ├── src/
-│   └── README.md
-├── week2/                   (LFE 3 deliverable)
-│   ├── src/
-│   └── README.md
-├── week3/                   (LFE 4 deliverable)
-│   ├── src/
-│   └── README.md
-├── week4/                   (LFE 5 deliverable)
-│   ├── src/
-│   └── README.md
-└── final-project/           (Create a Frontend assignment)
-    ├── src/
-    └── README.md
+├── src/
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── components/          (add components here as you build)
+├── public/
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
 ```
 
-**Alternatively:** Use separate repos for each week (either way is fine).
+Or create separate folders for each week:
+
+```
+cs490r-frontend/
+├── LearningPlan.md
+├── week1/
+├── week2/
+├── week3/
+├── week4/
+└── final-project/
+```
+
+Either way is fine—just commit as you go.
 
 ---
 
-## Weekly Time Breakdown (REALISTIC)
+## Weekly Time Breakdown (FINAL)
 
-⚠️ **Important Context:** This assumes you're ALSO doing CS 490R API work (~4-5 hrs/week) + CS 420 (~2-3 hrs/week). See `CS490R_Time_Analysis.md` for the full picture.
+| Week | Due Date | LFE | Frontend Hours | Total CS 490R | Peak? |
+|------|----------|-----|-----------------|---------------|-------|
+| **1** | May 19 | LFE 2 | 13-14 hours | ~17-19 hrs | Normal |
+| **2** | May 26 | LFE 3 | 15-17 hours | ~19-22 hrs | Normal |
+| **3** | June 2 | LFE 4 | 13-15 hours | ~15-18 hrs | Normal |
+| **4** | June 9 | LFE 5 | 13-15 hours | ~14-16 hrs | Normal |
+| **Total** | | | **54-61 hours** | **~65-76 hours** | |
 
-| Week | Frontend Deadlines | Frontend Hours | Context | Peak? |
-|------|-------------|------------------|---------|-------|
-| **1** | LFE 1 (May 13) | 4 hours | Choose tech, tutorial, plan | Easy |
-| **2** | LFE 2 (May 20) | 6-8 hours | API due May 23! Week 2 is PEAK | **CRUNCH** |
-| **3** | LFE 3 (May 27) | 8-10 hours | Continue learning + practice | Normal |
-| **4** | LFE 4 (Jun 3) | 8-10 hours | Data fetching + integration | Normal |
-| **5** | LFE 5 (Jun 10) | 8-10 hours | Auth + full backend connection | Normal |
-| **Total** | | **34-42 hours** | Spread across 5 weeks (May 13 - Jun 10) | |
-
-**Key Adjustment:** LFE 1 is due **May 13** (earlier than I said!), giving you 5 weeks of learning from May 13 to June 10.
+**Key Insight:** You're doing ~15-18 hours/week for CS 490R (API + Frontend combined). With 35-45 available hours/week, this is **very manageable**. You have room to breathe.
 
 ---
 
@@ -361,7 +381,7 @@ cs490r-frontend/
 
 ## Success Criteria
 
-By the end of Week 4, you should have:
+By the end of Week 4 (June 9), you should have:
 - ✅ A GitHub repository with 4 weeks of work, each with meaningful commits
 - ✅ A React app that fetches data from an API
 - ✅ A login form that authenticates with your Express backend
@@ -379,4 +399,4 @@ If you get stuck:
 3. Use AI to explain the concept, but don't ask it to write code
 4. Ask in Discord/office hours if stuck for >30 min
 
-Good luck! 🚀
+You've got this! 🚀
