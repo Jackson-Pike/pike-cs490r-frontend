@@ -1,5 +1,20 @@
 function Square({ value }) { // This will pass in a value from board
-  return <button className="square">{value}</button>; 
+  
+
+  function handleClick() {
+    console.log('clicked!');
+  }
+
+  return (
+
+    <button
+     className="square"
+     onClick={handleClick}
+    >
+      {value}
+      </button>
+
+  );
   // {} - curly brases 'escape into javascript'
 }
 
