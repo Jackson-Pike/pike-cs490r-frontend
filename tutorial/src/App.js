@@ -20,7 +20,14 @@ function Square() { // This will pass in a value from board
   const [value, setValue] = useState(null);
 
   function handleClick() {
-    console.log('clicked!');
+    setValue('X');
+    /*
+        By calling this set function from an onClick handler, 
+        you’re telling React to re-render that Square whenever
+         its <button> is clicked. After the update, the Square’s
+          value will be 'X', so you’ll see the “X” on the game board.
+          Click on any Square, and “X” should show up:
+    */
   }
 
   return (
@@ -41,6 +48,7 @@ function Square() { // This will pass in a value from board
 export default function Board() {
   return (
     <>
+      <HelloWorld />
       <div className="board-row">
         <Square   />
         <Square   />
@@ -58,4 +66,18 @@ export default function Board() {
       </div>
     </>
     );
+
+
+function HelloWorld() {
+  return (
+  <>
+    <h1>Welcome to Tic-Tac-Toe</h1>
+    <p>Hello World!</p>
+    <p>This was a tutorial site completed by Jackson Pike
+      following along the official React tutorial found <a href='https://react.dev/learn/tutorial-tic-tac-toe#setup-for-the-tutorial'>here</a>
+    </p>
+    </>
+  );
+}
+
 }
