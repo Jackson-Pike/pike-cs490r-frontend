@@ -70,6 +70,11 @@ export default function Board() {
   } else {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
+  const user = {
+    name: 'Jackson',
+    age: 25,
+    email: 'jackson@example.com'
+  };
   
   return (
     <>
@@ -91,7 +96,7 @@ export default function Board() {
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
       </div>
       <div>
-        <MyApp />
+        <MyApp user={user}/>
       </div>
     </>
     );
