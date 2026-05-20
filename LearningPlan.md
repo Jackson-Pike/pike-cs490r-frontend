@@ -60,10 +60,10 @@ You're new to JavaScript, which is React's foundation. This plan prioritizes **u
    - Only read if you hit JavaScript concepts you don't understand in React examples
 
 ### Milestones (check your progress)
-- [ ] Vite + React development environment set up and running (`npm run dev`)
-- [ ] Can create a simple functional component and render it
-- [ ] Understand the difference between JSX and regular JavaScript
-- [ ] Built a component that uses `props` to display different content
+- [x] Vite + React development environment set up and running (`npm run dev`)
+- [x] Can create a simple functional component and render it
+- [◐] Understand the difference between JSX and regular JavaScript
+- [x] Built a component that uses `props` to display different content
 - [ ] Built a component with `useState` that increments a counter on button click
 
 ### Weekly Deliverable for LFE 2 (Due May 19, 11:59 PM HST)
