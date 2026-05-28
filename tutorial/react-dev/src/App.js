@@ -16,6 +16,7 @@ a new line at the start of the Square that calls useState.
 */
 import { useState } from 'react';
 import MyApp from './BackToBasics'
+import Gallery from './a-components-memory'
 
 function Square({value, onSquareClick}) { // This will pass in a value from board
   
@@ -97,6 +98,7 @@ export default function Board() {
       </div>
       <div>
         <MyApp user={user}/>
+        <Gallery />
       </div>
     </>
     );
