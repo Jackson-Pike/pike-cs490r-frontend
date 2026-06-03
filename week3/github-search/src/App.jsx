@@ -40,17 +40,19 @@ export default function App() {
 
   }, [])
   return (
-    <div className="app">
+    <>
       <PikeHeader />
+      <main className="content">
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
           <p>{error}</p>
         ) : (
-          movies.map ((movie) => {
+          movies.map((movie) => {
             return <MovieCard key={movie._id} movie={movie} />
           })
         )}
-    </div>
+      </main>
+    </>
   )
 }
