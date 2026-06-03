@@ -1,5 +1,18 @@
 
 
 export default function MovieCard({movie}) {
-    return <p key={movie._id}>{movie.title}</p>
+    return (
+        <div 
+        className="movie-card"
+        style={{ border: '1px solid black', padding: '8px', margin: '8px' }}>
+            <p>{movie.title}</p>
+            <p>{movie.director}</p>
+            <p>{movie.genre}</p>
+            <p>{movie.releaseDate}</p>
+            <p>{movie.synopsis}</p>
+            <p>{movie.runtime}</p>
+            <p>{movie.maturity_rating}</p>
+            <img src={movie.poster_url} alt={movie.title} />
+        </div>
+    )
 }
