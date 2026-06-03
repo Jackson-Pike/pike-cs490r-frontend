@@ -39,7 +39,15 @@ export default function App() {
   }, [])
   return (
     <div className="app">
-        
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : (
+          movies.map ((movie) => {
+            return <p>{movie.title}</p>
+          })
+        )}
     </div>
   )
 }
