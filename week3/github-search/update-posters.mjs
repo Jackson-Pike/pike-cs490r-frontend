@@ -1,7 +1,7 @@
 const BACKEND_URL = 'http://localhost:3000/api/movies'
-const OMDB_API_KEY = 'your_omdb_key_here'
+const OMDB_API_KEY = 'dd8f30b0'
 const OMDB_URL = 'http://www.omdbapi.com/'
-const API_KEY = 'your_pikeapi_key_here'
+const API_KEY = '3de4dc4b5373b61415071879595b8aac'
 
 const headers = { 'x-api-key': API_KEY }
 

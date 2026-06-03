@@ -8,7 +8,7 @@ export default function MovieCard({movie}) {
             <p>{movie.title}</p>
             <p>{movie.director}</p>
             <p>{movie.genre}</p>
-            <p>{movie.releaseDate}</p>
+            <p>{new Date(movie.releaseDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <p>{movie.synopsis}</p>
             <p>{movie.runtime}</p>
             <p>{movie.maturity_rating}</p>
