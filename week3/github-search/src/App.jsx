@@ -1,6 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 import MovieCard from './components/MovieCard'
+import PikeHeader from './components/Header'
 
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
   }, [])
   return (
     <div className="app">
+      <PikeHeader />
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
