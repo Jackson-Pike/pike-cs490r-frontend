@@ -1,5 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
+import MovieCard from './components/MovieCard'
 
 
 export default function App() {
@@ -45,7 +46,7 @@ export default function App() {
           <p>{error}</p>
         ) : (
           movies.map ((movie) => {
-            return <p>{movie.title}</p>
+            return <MovieCard key={movie._id} movie={movie} />
           })
         )}
     </div>
