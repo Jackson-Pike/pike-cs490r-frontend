@@ -1,58 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import Header from './components/Header'
+import MovieListPage from './pages/MovieListPage'
+import LoginPage from './pages/Login'
+import SignupPage from './pages/Signup'
 import './App.css'
-import { useState, useEffect } from 'react'
-import MovieCard from './components/MovieCard'
-import PikeHeader from './components/Header'
-
 
 export default function App() {
-  const [movies, setMovies] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    async function loadMovies() {
-      const url = 'http://localhost:3000/api/movies'
-      try {
-        setLoading(true)
-        const response = await fetch(url, {
-          headers: {
-              "x-api-key": import.meta.env.VITE_PIKEAPI_KEY
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setMovies(result)
-        console.log(result)
-        
-        
-      } catch (error) {
-        setError(error.message)
-        console.error(error.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadMovies()
-
-  }, [])
   return (
-    <>
-      <PikeHeader />
-      <main className="content">
-        {loading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>{error}</p>
-        ) : (
-          movies.map((movie) => {
-            return <MovieCard key={movie._id} movie={movie} />
-          })
-        )}
-      </main>
-    </>
+    <AuthProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MovieListPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }

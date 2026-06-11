@@ -6,11 +6,31 @@ export default function MovieListPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  // TODO(human): add a useEffect here that fetches movies from
-  // 'http://localhost:3000/api/movies' and stores them in state.
-  // Use the same pattern from App.jsx — setLoading, try/catch/finally, setMovies, setError.
-  // The fetch needs an 'x-api-key' header using import.meta.env.VITE_PIKEAPI_KEY.
+  // DONE(student): implemented useEffect fetch — loads movies from API with loading/error/finally state pattern
+  useEffect(() => {
+    async function loadMovies() {
+        const url = 'http://localhost:3000/api/movies'
 
+        try {
+            setLoading(true)
+            const response = await fetch(url)
+
+            if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+            }
+
+            const result = await response.json();
+            setMovies(result)
+            console.log(result)
+        } catch (error) {
+            setError(error.message)
+            console.error(error.message)
+        } finally {
+            setLoading(false);
+        }
+    }
+    loadMovies()
+  }, [])
   return (
     <main className="content">
       {loading ? (
