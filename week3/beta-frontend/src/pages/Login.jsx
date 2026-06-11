@@ -28,7 +28,7 @@ export default function LoginPage() {
 
             const data = await response.json();
 
-            login(data.token)
+            login(data.token, data.user)
             navigate('/')
         } catch (error){
             setError(error.message)

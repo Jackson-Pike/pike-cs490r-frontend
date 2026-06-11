@@ -14,16 +14,18 @@ function decodeToken(rawToken) {
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(() => localStorage.getItem('token'))
-  const [user, setUser] = useState(() => decodeToken(localStorage.getItem('token')))
+  const [user, setUser] = useState(() => JSON.parse(localStorage.getItem('user')))
 
   function login(newToken, userData) {
     localStorage.setItem('token', newToken)
+    localStorage.setItem('user', JSON.stringify(userData));
     setToken(newToken)
     setUser(userData)
   }
 
   function logout() {
     localStorage.removeItem('token')
+    localStorage.removeItem('user')
     setToken(null)
     setUser(null)
   }

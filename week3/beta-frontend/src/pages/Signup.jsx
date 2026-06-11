@@ -24,7 +24,7 @@ export default function SignupPage() {
         setError(data.error ?? 'Signup failed')
         return
       }
-      login(data.token)
+      login(data.token, data.user)
       navigate('/')
     } catch (err) {
       setError(err.message)
