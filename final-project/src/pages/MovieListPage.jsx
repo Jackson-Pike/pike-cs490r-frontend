@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import MovieCard from '../components/MovieCard'
+import { Link } from 'react-router-dom'
 
 export default function MovieListPage() {
+
   const [movies, setMovies] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -39,6 +41,7 @@ export default function MovieListPage() {
         <p>{error}</p>
       ) : (
         movies.map((movie) => (
+          
           <MovieCard key={movie._id} movie={movie} />
         ))
       )}
