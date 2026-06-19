@@ -1,9 +1,10 @@
+import './MovieCard.css'
 // CHANGED: removed useNavigate + Link — MovieCard is now a display-only component; navigation is handled by the parent (MovieListPage wraps in <Link>)
 export default function MovieCard({movie}) {
     return (
         <div
         className="movie-card"
-        style={{ border: '1px solid black', padding: '8px', margin: '8px' }}>
+        >
             <p>{movie.title}</p>
             <p>{movie.director}</p>
             <p>{movie.genre}</p>

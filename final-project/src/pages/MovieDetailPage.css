@@ -1,0 +1,10 @@
+.content {
+    display: grid;
+    grid-template-areas: 'movie movie movie movie';
+    margin: 0;
+    padding: 0;
+}
+
+.movie-card {
+    padding: 30px;
+}
