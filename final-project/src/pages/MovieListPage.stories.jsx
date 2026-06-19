@@ -52,8 +52,8 @@ export const Default = {
     },
   },
   play: async ({ canvas }) => {
-    await expect(canvas.getByText('The Matrix')).toBeVisible();
-    await expect(canvas.getByText('Inception')).toBeVisible();
+    await expect(await canvas.findByText('The Matrix')).toBeVisible();
+    await expect(await canvas.findByText('Inception')).toBeVisible();
   },
 };
 
@@ -75,12 +75,12 @@ export const Error = {
     msw: {
       handlers: [
         http.get('http://localhost:3000/api/movies', () =>
-          HttpResponse.error()
+          HttpResponse.json({}, { status: 500 })
         ),
       ],
     },
   },
   play: async ({ canvas }) => {
-    await expect(canvas.getByText('Failed to fetch')).toBeVisible();
+    await expect(await canvas.findByText('Status: 500')).toBeVisible();
   },
 };
