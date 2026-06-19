@@ -5,6 +5,7 @@ import MovieListPage from './pages/MovieListPage'
 import LoginPage from './pages/Login'
 import SignupPage from './pages/Signup'
 import ProtectedRoute from './components/ProtectedRoute'
+import MovieDetailPage from './pages/MovieDetailPage'
 import './App.css'
 
 export default function App() {
@@ -17,6 +18,11 @@ export default function App() {
             <ProtectedRoute>
               <MovieListPage />
             </ProtectedRoute>}/>
+          <Route path="/movies/:id" element={
+            <ProtectedRoute>
+              <MovieDetailPage />
+            </ProtectedRoute>
+          } />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
         </Routes>

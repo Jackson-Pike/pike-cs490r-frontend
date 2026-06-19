@@ -1,10 +1,12 @@
-
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 export default function MovieCard({movie}) {
+    const navigate = useNavigate()
     return (
         <div 
         className="movie-card"
-        style={{ border: '1px solid black', padding: '8px', margin: '8px' }}>
+        onClick={() => navigate(`/movies/${movie._id}`)}
+        style={{ border: '1px solid black', padding: '8px', margin: '8px', cursor: 'pointer'}}>
             <p><Link to={`/movies/${movie._id}`}>{movie.title}</Link></p>
             <p>{movie.director}</p>
             <p>{movie.genre}</p>
