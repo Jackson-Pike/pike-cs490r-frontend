@@ -27,7 +27,7 @@ export default function PikeHeader() {
           </>
         )}
         {/* AI: <Link> instead of <a> to stay in SPA mode */}
-        {!isActive ? (
+        {(!isActive && user) ? (
           <Link to="/">All Movies</Link>
         ) : (
           <></>
