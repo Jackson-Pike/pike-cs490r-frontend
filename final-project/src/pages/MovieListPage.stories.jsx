@@ -56,3 +56,16 @@ export const Default = {
     await expect(canvas.getByText('Inception')).toBeVisible();
   },
 };
+
+export const Loading = {
+  parameters: {
+    msw: {
+      handlers: [
+        http.get('http://localhost:3000/api/movies', () => new Promise(() => {})),
+      ],
+    },
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByText('Loading...')).toBeVisible();
+  },
+};
