@@ -1,9 +1,9 @@
-import './MovieCard.css'
+import './MovieDetail.css'
 // CHANGED: removed useNavigate + Link — MovieCard is now a display-only component; navigation is handled by the parent (MovieListPage wraps in <Link>)
-export default function MovieCard({movie}) {
+export default function MovieDetail({movie}) {
     return (
         <div
-        className="movie-card"
+        className="movie-detail"
         >
             <p>{movie.title}</p>
             <p>{movie.director}</p>

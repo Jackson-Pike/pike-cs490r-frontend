@@ -1,0 +1,25 @@
+.movie-poster {
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    position: relative;
+    border: #00FF85 1px solid;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-poster p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.85rem;
+}

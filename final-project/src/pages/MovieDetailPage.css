@@ -1,16 +1,11 @@
 .content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, fr));
     gap: 16px;
     margin: 5px;
     padding: 16px;
     background-color: #121212;
 }
 
-.movie-card {
-    padding: 30px;
-    width: 100%;
-    aspect-ratio: 2/3;
-    overflow: hidden;
-    border: #00FF85 1px solid;
-}
+
+

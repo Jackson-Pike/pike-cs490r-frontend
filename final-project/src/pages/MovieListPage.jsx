@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import MovieCard from '../components/MovieCard'
+import MoviePoster from '../components/MoviePoster'
 import { Link } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
+import './MovieListPage.css'
 
 export default function MovieListPage() {
 
@@ -21,7 +22,7 @@ export default function MovieListPage() {
         // CHANGED: wrapped MovieCard in <Link> so the whole card is clickable — navigation moved here from MovieCard
         movies?.map((movie) => (
           <Link key={movie._id} to={`/movies/${movie._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-            <MovieCard movie={movie} />
+            <MoviePoster movie={movie} />
           </Link>
         ))
       )}

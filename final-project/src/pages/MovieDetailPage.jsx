@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
-import MovieCard from '../components/MovieCard'
+import MovieCard from '../components/MovieDetail'
 import './MovieDetailPage.css'
 
 export default function MovieDetailPage() {
@@ -14,7 +14,7 @@ export default function MovieDetailPage() {
     if (error) return <p>{error}</p>
     // CHANGED: was referencing "data" (undefined) — fixed to use "movie" which is the aliased variable
     if (!movie) return null
-    return <MovieCard movie={movie} />
+    return <MovieDetail movie={movie} />
 
     
 }
