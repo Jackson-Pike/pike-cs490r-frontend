@@ -69,3 +69,18 @@ export const Loading = {
     await expect(canvas.getByText('Loading...')).toBeVisible();
   },
 };
+
+export const Error = {
+  parameters: {
+    msw: {
+      handlers: [
+        http.get('http://localhost:3000/api/movies', () =>
+          HttpResponse.error()
+        ),
+      ],
+    },
+  },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByText('Failed to fetch')).toBeVisible();
+  },
+};
