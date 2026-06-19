@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useFetch } from '../hooks/useFetch'
-import MovieCard from '../components/MovieDetail'
+import MovieDetail from '../components/MovieDetail'
 import './MovieDetailPage.css'
 
 export default function MovieDetailPage() {

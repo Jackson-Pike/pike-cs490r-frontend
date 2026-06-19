@@ -2,10 +2,11 @@ main.content {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
-  padding: 0;
+  padding-left: 200px;
+  padding-right: 200px;
   margin: 0;
   box-sizing: border-box;
   width: 100%;
-  
+
    
 }
