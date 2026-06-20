@@ -1,12 +1,23 @@
 main.content {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  padding-left: 200px;
-  padding-right: 200px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 32px clamp(24px, 6vw, 120px);
   margin: 0;
   box-sizing: border-box;
   width: 100%;
+}
 
-   
+@media (min-width: 1400px) {
+  main.content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  main.content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 20px 16px;
+  }
 }
