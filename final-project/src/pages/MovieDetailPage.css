@@ -1,11 +1,1 @@
-.content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, fr));
-    gap: 16px;
-    margin: 5px;
-    padding: 16px;
-    background-color: #121212;
-}
-
-
-
+/* MovieDetailPage is a thin wrapper — layout lives in MovieDetail.css */

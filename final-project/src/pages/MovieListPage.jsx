@@ -20,7 +20,7 @@ export default function MovieListPage() {
         <p>{error}</p>
       ) : (
         // CHANGED: wrapped MovieCard in <Link> so the whole card is clickable — navigation moved here from MovieCard
-        movies?.map((movie) => (
+        movies?.filter(movie => movie.poster_url).map((movie) => (
           <Link key={movie._id} to={`/movies/${movie._id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
             <MoviePoster movie={movie} />
           </Link>

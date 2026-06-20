@@ -1,8 +1,241 @@
+/* ─── Movie Detail Layout ────────────────────────────────────────────────── */
+
 .movie-detail {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+
+    padding: 48px clamp(24px, 6vw, 120px);
+    box-sizing: border-box;
+    min-height: calc(100vh - 80px); /* offset for header */
+    background-color: var(--bg-dark);
+    color: var(--white);
+}
+
+
+/* ─── Poster Column ──────────────────────────────────────────────────────── */
+
+.movie-detail__poster-col {
+    position: sticky;
+    top: 32px;
+}
+
+.movie-detail__poster-frame {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    border-radius: 8px;
+    overflow: hidden;
+
+    /* Matches the card aesthetic — low-opacity green border, soft glow */
+    border: 1px solid rgba(0, 255, 133, 0.2);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.7),
+        0 0 0 0 rgba(0, 255, 133, 0);
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.movie-detail__poster-frame:hover {
+    border-color: rgba(0, 255, 133, 0.4);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.75),
+        0 0 24px rgba(0, 255, 133, 0.12);
+}
+
+.movie-detail__poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.95) saturate(0.92);
+    transition: filter 0.3s ease;
+}
+
+.movie-detail__poster-frame:hover .movie-detail__poster-img {
+    filter: brightness(1) saturate(1.05);
+}
+
+
+/* ─── Metadata Column ────────────────────────────────────────────────────── */
+
+.movie-detail__meta-col {
     display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+
+/* ─── Title Block ────────────────────────────────────────────────────────── */
+
+.movie-detail__title-block {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
-.movie-detail img {
-    flex-basis: -1;
+.movie-detail__title {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--white);
+}
+
+.movie-detail__year {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+
+/* ─── Quick Facts Row ────────────────────────────────────────────────────── */
+
+.movie-detail__facts {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Rating badge — outlined box, mirrors the nav-btn ghost style */
+.movie-detail__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* Plain metadata pills */
+.movie-detail__fact {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.02em;
+}
+
+/* Dot separator between facts */
+.movie-detail__fact + .movie-detail__fact::before,
+.movie-detail__badge + .movie-detail__fact::before {
+    content: '·';
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+/* Genre gets a subtle green tint */
+.movie-detail__fact--genre {
+    color: rgba(0, 255, 133, 0.7);
+}
+
+
+/* ─── Divider ────────────────────────────────────────────────────────────── */
+
+.movie-detail__divider {
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(0, 255, 133, 0.25) 0%,
+        rgba(0, 255, 133, 0.06) 60%,
+        transparent 100%
+    );
+}
+
+
+/* ─── Labelled Fields (Director, Release Date) ───────────────────────────── */
+
+.movie-detail__fields {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.movie-detail__field {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 8px;
+    align-items: baseline;
+}
+
+.movie-detail__label {
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    opacity: 0.7;
+}
+
+.movie-detail__value {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.5;
+}
+
+
+/* ─── Synopsis ───────────────────────────────────────────────────────────── */
+
+.movie-detail__synopsis-block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Reuses .movie-detail__label for the "Synopsis" heading */
+
+.movie-detail__synopsis {
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.68);
+    max-width: 68ch;
+}
+
+
+/* ─── Mobile: stack poster above metadata ────────────────────────────────── */
+
+@media (max-width: 700px) {
+    .movie-detail {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 24px 16px 48px;
+    }
+
+    .movie-detail__poster-col {
+        position: static;
+        /* Constrain poster width so it doesn't go full-bleed on mobile */
+        max-width: 220px;
+        margin: 0 auto;
+    }
+
+    .movie-detail__title {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .movie-detail__field {
+        grid-template-columns: 100px 1fr;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .movie-detail {
+        grid-template-columns: 220px 1fr;
+        gap: 32px;
+        padding: 36px clamp(20px, 4vw, 60px);
+    }
 }
