@@ -42,11 +42,26 @@
 
   /* Very slight desaturate at rest — pops on hover */
   filter: brightness(0.92) saturate(0.9);
-  transition: filter 0.22s ease;
+
+  /* Fade in once loaded (see .is-loaded). Start hidden so the
+     shimmer underneath shows through until the image is ready. */
+  opacity: 0;
+  transition: filter 0.22s ease, opacity 0.3s ease;
+}
+
+.movie-poster img.is-loaded {
+  opacity: 1;
 }
 
 .movie-poster:hover img {
   filter: brightness(1) saturate(1.05);
+}
+
+/* The shimmer fills the whole 2:3 box behind the image */
+.movie-poster__skeleton {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
 }
 
 /* Title overlay — gradient instead of flat black band */

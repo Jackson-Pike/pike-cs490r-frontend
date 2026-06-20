@@ -1,4 +1,5 @@
 import GenreShelf from '../components/GenreShelf'
+import GenreShelfSkeleton from '../components/GenreShelfSkeleton'
 import { useFetch } from '../hooks/useFetch'
 import './MovieListPage.css'
 
@@ -43,7 +44,13 @@ export default function MovieListPage() {
   return (
     <main className="content">
       {loading ? (
-        <p className="content__status">Loading...</p>
+        // While the JSON is in flight, show a few placeholder shelves
+        // instead of a bare "Loading..." line.
+        <>
+          <GenreShelfSkeleton />
+          <GenreShelfSkeleton />
+          <GenreShelfSkeleton />
+        </>
       ) : error ? (
         <p className="content__status">{error}</p>
       ) : (

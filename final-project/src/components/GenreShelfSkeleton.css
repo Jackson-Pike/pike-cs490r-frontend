@@ -1,0 +1,26 @@
+/* Placeholder shapes for a genre shelf while the movie list is fetching.
+   Reuses .genre-shelf / .genre-shelf__row layout so the skeleton lines
+   up pixel-for-pixel with the real shelves that replace it. */
+
+.genre-shelf-skeleton__heading {
+  height: 14px;
+  width: 140px;
+  margin: 0 32px 16px;
+  border-radius: 4px;
+}
+
+.genre-shelf-skeleton__card {
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 2/3;
+  border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+  .genre-shelf-skeleton__heading {
+    margin: 0 16px 16px;
+  }
+  .genre-shelf-skeleton__card {
+    width: 150px;
+  }
+}

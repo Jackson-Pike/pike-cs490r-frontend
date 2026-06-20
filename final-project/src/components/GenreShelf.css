@@ -28,11 +28,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 
-  /* TODO(human): decide the scroll-snap feel for the shelf.
-     Add scroll-snap-type here, and the matching scroll-snap-align
-     on .genre-shelf__item below. */
   scroll-snap-type: x proximity;
-  
 }
 
 .genre-shelf__row::-webkit-scrollbar {
