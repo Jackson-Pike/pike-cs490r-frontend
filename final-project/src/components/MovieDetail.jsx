@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom'
 import './MovieDetail.css'
 
 export default function MovieDetail({ movie }) {
+    const navigate = useNavigate()
     const releaseYear = movie.releaseDate
         ? new Date(movie.releaseDate).getFullYear()
         : null
@@ -14,6 +16,12 @@ export default function MovieDetail({ movie }) {
         : null
 
     return (
+        <>
+        <div className="movie-detail__back-row">
+            <button className="movie-detail__back-btn" onClick={() => navigate('/')}>
+                ← Back to Catalog
+            </button>
+        </div>
         <article className="movie-detail">
             {/* Left column — poster */}
             <div className="movie-detail__poster-col">
@@ -78,5 +86,6 @@ export default function MovieDetail({ movie }) {
                 )}
             </div>
         </article>
+        </>
     )
 }

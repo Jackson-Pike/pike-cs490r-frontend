@@ -1,3 +1,30 @@
+/* ─── Back Button ────────────────────────────────────────────────────────── */
+
+.movie-detail__back-row {
+    padding: 20px clamp(24px, 6vw, 120px) 0;
+    background-color: var(--bg-dark);
+}
+
+.movie-detail__back-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 133, 0.3);
+    color: rgba(0, 255, 133, 0.8);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.movie-detail__back-btn:hover {
+    border-color: rgba(0, 255, 133, 0.7);
+    color: var(--green);
+    background: rgba(0, 255, 133, 0.06);
+}
+
 /* ─── Movie Detail Layout ────────────────────────────────────────────────── */
 
 .movie-detail {
