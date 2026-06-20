@@ -14,8 +14,11 @@ body {
   font-family: sans-serif;
   background: #121212;
   color: #333;
-  display: grid;
-    
+
+  /* Lock the page horizontally: only the genre shelves are allowed to
+     scroll sideways. Without this, a wide shelf row pushes the whole
+     page wider than the viewport and you get one big page-level scroll. */
+  overflow-x: hidden;
 }
 
 
