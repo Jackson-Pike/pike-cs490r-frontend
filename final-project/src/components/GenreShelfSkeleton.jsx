@@ -19,18 +19,14 @@ export default function GenreShelfSkeleton() {
   // Decide: how many placeholder cards make a row feel "full" without
   // looking heavy? Render them — a small array + .map() is one clean way
   // (e.g. Array.from({ length: N })), or just write them out by hand.
-  return
-  <>
+  return (
     <section className="genre-shelf">
       <div className="genre-shelf-skeleton__heading skeleton" />
       <div className="genre-shelf__row">
         <div className="genre-shelf-skeleton__card skeleton" />
         <div className="genre-shelf-skeleton__card skeleton" />
-
         <div className="genre-shelf-skeleton__card skeleton" />
-
-
       </div>
     </section>
-  </>
+  )
 }
