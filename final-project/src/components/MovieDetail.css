@@ -1,0 +1,8 @@
+.movie-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-detail img {
+    flex-basis: -1;
+}

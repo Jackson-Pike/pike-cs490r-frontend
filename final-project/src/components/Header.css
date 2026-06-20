@@ -1,0 +1,17 @@
+header {
+    display: flex;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    gap: 20px;
+
+    button {
+        padding-left: 14px;
+        padding-right: 14px;
+        border-radius: 15px;
+    }
+}
+

@@ -1,4 +1,5 @@
 import { useAuth } from '../hooks/useAuth'
+import './Header.css'
 // AI: added Link for SPA navigation (no page reload)
 import { useLocation, Link } from 'react-router-dom';
 
