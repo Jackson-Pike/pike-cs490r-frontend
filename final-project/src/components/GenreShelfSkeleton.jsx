@@ -15,10 +15,6 @@ import './GenreShelfSkeleton.css'
 //
 // The `skeleton` class (in index.css) supplies the shimmer animation.
 export default function GenreShelfSkeleton() {
-  // TODO(human): return the JSX for one skeleton shelf.
-  // Decide: how many placeholder cards make a row feel "full" without
-  // looking heavy? Render them — a small array + .map() is one clean way
-  // (e.g. Array.from({ length: N })), or just write them out by hand.
   return (
     <section className="genre-shelf">
       <div className="genre-shelf-skeleton__heading skeleton" />

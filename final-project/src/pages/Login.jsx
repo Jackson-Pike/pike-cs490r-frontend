@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
-import './Login.css'
+import './Auth.css'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -34,15 +34,15 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <Link to="/" className="login-logo">PikeDB</Link>
-        <h1 className="login-heading">Welcome back</h1>
-        <p className="login-sub">Sign in to continue</p>
+    <div className="auth-page">
+      <div className="auth-card">
+        <Link to="/" className="auth-logo">PikeDB</Link>
+        <h1 className="auth-heading">Welcome back</h1>
+        <p className="auth-sub">Sign in to continue</p>
 
-        {error && <div className="login-error">{error}</div>}
+        {error && <div className="auth-error">{error}</div>}
 
-        <form onSubmit={handleSubmit} className="login-form">
+        <form onSubmit={handleSubmit} className="auth-form">
           <div className="input-group">
             <input
               id="login-email"
@@ -69,12 +69,12 @@ export default function LoginPage() {
             <label htmlFor="login-password">Password</label>
           </div>
 
-          <button type="submit" className="login-submit" disabled={submitting}>
+          <button type="submit" className="auth-submit" disabled={submitting}>
             {submitting ? 'Signing in…' : 'Sign In'}
           </button>
         </form>
 
-        <p className="login-footer">
+        <p className="auth-footer">
           No account? <Link to="/signup">Sign up</Link>
         </p>
       </div>
