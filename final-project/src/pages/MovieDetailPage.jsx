@@ -6,7 +6,7 @@ import './MovieDetailPage.css'
 export default function MovieDetailPage() {
     const {id} = useParams()
 
-    const url = `http://localhost:3000/api/movies/${id}`
+    const url = `${import.meta.env.VITE_API_URL}/api/movies/${id}`
     // CHANGED: useFetch returns {data, loading, error} — aliased data as "movie" for clarity
     const { data: movie, loading, error } = useFetch(url)
 

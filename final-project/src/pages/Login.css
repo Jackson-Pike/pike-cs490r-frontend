@@ -1,0 +1,223 @@
+/* ── Animations ─────────────────────────────────── */
+
+@keyframes projector-pulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50%       { opacity: 0.8; transform: translate(-50%, -50%) scale(1.12); }
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* ── Page shell ─────────────────────────────────── */
+
+.login-page {
+  flex: 1;
+  background: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Projector glow */
+.login-page::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 133, 0.07) 0%, transparent 68%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: projector-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ── Card ───────────────────────────────────────── */
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 420px;
+  padding: 52px 44px 44px;
+  background: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(0, 255, 133, 0.18);
+  border-radius: 10px;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 133, 0.04),
+    0 24px 64px rgba(0, 0, 0, 0.7),
+    0 0 60px rgba(0, 255, 133, 0.05);
+  animation: card-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.login-logo {
+  display: inline-block;
+  font-family: ui-monospace, monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green);
+  text-decoration: none;
+  margin-bottom: 32px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.login-logo:hover {
+  opacity: 1;
+}
+
+.login-heading {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin: 0 0 4px;
+}
+
+.login-sub {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 36px;
+}
+
+/* ── Error ──────────────────────────────────────── */
+
+.login-error {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: #ff6b6b;
+  margin-bottom: 24px;
+}
+
+/* ── Floating-label inputs ──────────────────────── */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.input-group input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 20px 0 8px;
+  color: var(--white);
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease;
+}
+
+/* animated underline grows on focus */
+.input-group::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(0, 255, 133, 0.5);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group:focus-within::after {
+  width: 100%;
+}
+
+.input-group label {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+/* float label up when focused or filled */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+  top: 2px;
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ── Submit button ──────────────────────────────── */
+
+.login-submit {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  background: var(--green);
+  color: #080808;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, transform 0.1s ease, opacity 0.2s ease;
+}
+
+.login-submit:hover {
+  box-shadow: 0 0 28px rgba(0, 255, 133, 0.4);
+}
+
+.login-submit:active {
+  transform: scale(0.99);
+}
+
+.login-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ── Footer link ────────────────────────────────── */
+
+.login-footer {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.login-footer a {
+  color: var(--green);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.login-footer a:hover {
+  opacity: 0.75;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-page::before,
+  .login-card {
+    animation: none;
+  }
+}

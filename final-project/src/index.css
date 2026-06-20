@@ -1,4 +1,11 @@
 :root {
+  /* App color palette */
+  --green: #00ff85;
+  --blue: #2e8eff;
+  --bg-dark: #121212;
+  --bg-dark-secondary: #1a1a1a;
+  --white: #ffffff;
+
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;

@@ -1,37 +1,35 @@
 import { useAuth } from '../hooks/useAuth'
 import './Header.css'
-// AI: added Link for SPA navigation (no page reload)
 import { useLocation, Link } from 'react-router-dom';
+
+function getInitials(username) {
+  const parts = username.trim().split(/\s+/)
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase()
+  return username.slice(0, 2).toUpperCase()
+}
 
 export default function PikeHeader() {
   const { user, logout } = useAuth()
-
   const location = useLocation();
   const isActive = location.pathname === '/';
 
-  // DONE(student): implemented conditional auth nav — ternary on user shows login/signup links when logged out, username + logout button when logged in
-
   return (
     <header className="header">
-      <h1>PikeDB</h1>
+      <Link to="/" className="header-logo">PikeDB</Link>
       <nav>
         {user ? (
           <>
-          <span>{user.username}</span>
-          <button onClick={logout}>Logout</button>
+            {!isActive && <Link to="/" className="nav-btn">All Movies</Link>}
+            <button onClick={logout} className="nav-btn nav-btn--danger">Logout</button>
+            <div className="nav-avatar" title={user.username}>
+              {getInitials(user.username)}
+            </div>
           </>
         ) : (
           <>
-          {/* AI: <Link> instead of <a> to stay in SPA mode */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Signup</Link>
+            <Link to="/login" className="nav-btn">Login</Link>
+            <Link to="/signup" className="nav-btn nav-btn--primary">Sign Up</Link>
           </>
-        )}
-        {/* AI: <Link> instead of <a> to stay in SPA mode */}
-        {(!isActive && user) ? (
-          <Link to="/">All Movies</Link>
-        ) : (
-          <></>
         )}
       </nav>
     </header>

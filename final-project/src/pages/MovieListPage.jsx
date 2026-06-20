@@ -8,7 +8,7 @@ export default function MovieListPage() {
 
 
   // DONE(student): implemented useEffect fetch — loads movies from API with loading/error/finally state pattern
-  const url = 'http://localhost:3000/api/movies'
+  const url = `${import.meta.env.VITE_API_URL}/api/movies`
 
   const { data: movies, loading, error } = useFetch(url)
   
