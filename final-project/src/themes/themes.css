@@ -1,0 +1,98 @@
+/* ─────────────────────────────────────────────────────
+   View Transition — circular ripple override
+   ───────────────────────────────────────────────────── */
+
+@keyframes theme-ripple {
+  from { clip-path: circle(0% at 50% 50%); }
+  to   { clip-path: circle(150% at 50% 50%); }
+}
+
+::view-transition-new(root) {
+  animation: theme-ripple 0.45s ease-out;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   Base — light mode defaults (all themes inherit these)
+   ───────────────────────────────────────────────────── */
+
+:root {
+  --bg:            #ffffff;
+  --bg-secondary:  #f0f0f4;
+  --text:          #6b7280;
+  --text-h:        #111827;
+  --text-subtle:   rgba(17, 24, 39, 0.55);
+  --text-faint:    rgba(17, 24, 39, 0.28);
+  --border:        rgba(17, 24, 39, 0.12);
+  --border-subtle: rgba(17, 24, 39, 0.05);
+  --shadow:        rgba(17, 24, 39, 0.08) 0 4px 16px,
+                   rgba(17, 24, 39, 0.04) 0 2px 6px;
+  --primary:       #6366f1;
+  --primary-rgb:   99, 102, 241;
+  --amber:         #f4a229;
+  --sans:          system-ui, 'Segoe UI', sans-serif;
+  --heading:       system-ui, 'Segoe UI', sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────
+   Dark mode — overrides bg/text/border to go dark
+   Primary color is still set per-theme below
+   ───────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:            #121212;
+    --bg-secondary:  #1a1a1a;
+    --text:          #9ca3af;
+    --text-h:        #f3f4f6;
+    --text-subtle:   rgba(255, 255, 255, 0.55);
+    --text-faint:    rgba(255, 255, 255, 0.28);
+    --border:        rgba(255, 255, 255, 0.08);
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --shadow:        rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+                     rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --primary:       #00ff85;
+    --primary-rgb:   0, 255, 133;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   Theme personalities — primary color + fonts only.
+   Backgrounds and text adapt automatically to OS mode.
+   ───────────────────────────────────────────────────── */
+
+[data-theme="dark-cinema"] {
+  --primary:     #00ff85;
+  --primary-rgb: 0, 255, 133;
+}
+
+[data-theme="vintage-hollywood"] {
+  --primary:     #c9a84c;
+  --primary-rgb: 201, 168, 76;
+  --sans:        'Lora', Georgia, serif;
+  --heading:     'Playfair Display', Georgia, serif;
+}
+
+[data-theme="streaming-service"] {
+  --primary:     #e50914;
+  --primary-rgb: 229, 9, 20;
+  --sans:        'Inter', system-ui, sans-serif;
+  --heading:     'Anton', system-ui, sans-serif;
+}
+
+[data-theme="retro-vhs"] {
+  --primary:     #00f5e4;
+  --primary-rgb: 0, 245, 228;
+  --sans:        'Share Tech Mono', monospace;
+  --heading:     'VT323', monospace;
+}
+
+[data-theme="clean-light"] {
+  --primary:     #6366f1;
+  --primary-rgb: 99, 102, 241;
+  --sans:        'Plus Jakarta Sans', system-ui, sans-serif;
+  --heading:     'Plus Jakarta Sans', system-ui, sans-serif;
+}

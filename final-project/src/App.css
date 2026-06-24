@@ -12,8 +12,8 @@
 
 body {
   font-family: sans-serif;
-  background: #121212;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
 
   /* Lock the page horizontally: only the genre shelves are allowed to
      scroll sideways. Without this, a wide shelf row pushes the whole
