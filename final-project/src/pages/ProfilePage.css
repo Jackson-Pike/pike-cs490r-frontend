@@ -4,7 +4,7 @@
   max-width: 860px;
   margin: 0 auto;
   padding: 32px 24px 64px;
-  color: var(--white);
+  color: var(--text-h);
 }
 
 /* ─── User info card ─────────────────────────────────────────────────────── */
@@ -13,8 +13,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  background: rgba(0, 255, 133, 0.04);
-  border: 1px solid rgba(0, 255, 133, 0.2);
+  background: rgba(var(--primary-rgb), 0.04);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
   border-left: 3px solid var(--primary);
   border-radius: 8px;
   padding: 20px 24px;
@@ -47,18 +47,18 @@
   margin: 0;
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text-h);
 }
 
 .profile__meta {
   margin: 0;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-subtle);
 }
 
 .profile__meta--muted {
   font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-faint);
 }
 
 /* Review count stat — floated to the right */
@@ -68,7 +68,7 @@
   align-items: center;
   gap: 2px;
   padding-left: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.07);
+  border-left: 1px solid var(--border-subtle);
 }
 
 .profile__stat-num {
@@ -84,7 +84,7 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-faint);
 }
 
 /* ─── Reviews section ────────────────────────────────────────────────────── */
@@ -101,7 +101,7 @@
 
 .profile__empty {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-faint);
   font-style: italic;
   margin: 0;
 }
@@ -118,15 +118,15 @@
 /* ─── Review card ────────────────────────────────────────────────────────── */
 
 .profile__review-card {
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid rgba(0, 255, 133, 0.15);
+  background: rgba(var(--primary-rgb), 0.02);
+  border: 1px solid rgba(var(--primary-rgb), 0.15);
   border-radius: 8px;
   padding: 14px 18px;
   transition: border-color 0.2s;
 }
 
 .profile__review-card:hover {
-  border-color: rgba(0, 255, 133, 0.3);
+  border-color: rgba(var(--primary-rgb), 0.3);
 }
 
 .profile__review-header {
@@ -140,7 +140,7 @@
 .profile__movie-title {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--white);
+  color: var(--text-h);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -169,12 +169,12 @@
   margin: 0 0 8px;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text);
 }
 
 .profile__review-date {
   font-size: 0.7rem;
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--text-faint);
 }
 
 /* ─── Status messages ────────────────────────────────────────────────────── */
@@ -182,7 +182,7 @@
 .profile__status {
   padding: 40px 24px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-subtle);
   font-size: 0.9rem;
 }
 
@@ -199,7 +199,7 @@
 
   .profile__stat {
     border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid var(--border-subtle);
     padding: 12px 0 0;
     width: 100%;
     flex-direction: row;
@@ -244,7 +244,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 3px solid var(--swatch-bg);
+  border: 3px solid var(--border);
   background: var(--swatch-color);
   cursor: pointer;
   position: relative;
@@ -253,7 +253,7 @@
   justify-content: center;
   padding: 0;
   transition: transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px var(--border);
 }
 
 .profile__swatch:hover {

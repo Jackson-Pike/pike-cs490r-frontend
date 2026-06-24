@@ -15,15 +15,15 @@ export default function PikeHeader() {
 
   return (
     <header className="header">
-      <Link to="/" className="header-logo">PikeDB</Link>
+      <Link to="/" className="header-logo">Pike<span className="logo-accent">·</span>DB</Link>
       <nav>
         {user ? (
           <>
-            {!isActive && <Link to="/" className="nav-btn">All Movies</Link>}
-            <button onClick={logout} className="nav-btn nav-btn--danger">Logout</button>
+            {!isActive && <Link to="/" className="nav-link">← Browse</Link>}
             <Link to="/profile" className="nav-avatar" title={`${user.username} — view profile`}>
               {getInitials(user.username)}
             </Link>
+            <button onClick={logout} className="nav-logout">sign out</button>
           </>
         ) : (
           <>

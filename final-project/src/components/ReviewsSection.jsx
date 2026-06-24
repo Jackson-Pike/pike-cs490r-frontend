@@ -40,6 +40,33 @@ function AverageRating({ avg, count }) {
   )
 }
 
+function StarInput({ value, onChange }) {
+  const [hovered, setHovered] = useState(null)
+  const filled = hovered ?? (value ? value : 0)
+
+  return (
+    <div className="reviews__star-input" onMouseLeave={() => setHovered(null)}>
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((star) => (
+        <button
+          key={star}
+          type="button"
+          className={`reviews__star-btn${filled >= star ? ' reviews__star-btn--on' : ''}`}
+          onMouseEnter={() => setHovered(star)}
+          onClick={() => onChange(star)}
+          aria-label={`Rate ${star} out of 10`}
+        >
+          ★
+        </button>
+      ))}
+      {value ? (
+        <span className="reviews__star-input-num">{value}/10</span>
+      ) : (
+        <span className="reviews__star-input-hint">click to rate</span>
+      )}
+    </div>
+  )
+}
+
 function ReviewForm({ initial, onSubmit, onCancel, submitLabel }) {
   const [rating, setRating] = useState(initial?.rating ?? '')
   const [text, setText] = useState(initial?.review_text ?? '')
@@ -79,21 +106,8 @@ function ReviewForm({ initial, onSubmit, onCancel, submitLabel }) {
       {error && <p className="reviews__form-error">{error}</p>}
 
       <div className="reviews__field-row">
-        <label className="reviews__field-label" htmlFor="review-rating">
-          Rating (1–10)
-        </label>
-        <input
-          id="review-rating"
-          className="reviews__input reviews__input--narrow"
-          type="number"
-          min="1"
-          max="10"
-          step="1"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          placeholder="8"
-          required
-        />
+        <label className="reviews__field-label">Rating</label>
+        <StarInput value={rating} onChange={setRating} />
       </div>
 
       <div className="reviews__field-row">

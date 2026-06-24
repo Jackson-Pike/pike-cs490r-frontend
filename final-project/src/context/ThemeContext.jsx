@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useLayoutEffect } from 'react'
 
 export const ThemeContext = createContext(null)
@@ -44,7 +45,7 @@ export function ThemeProvider({ children }) {
     const saved = localStorage.getItem('theme') ?? 'dark-cinema'
     document.documentElement.dataset.theme = saved
     injectFonts(saved)
-    setThemeState(saved)
+    setThemeState(saved) // eslint-disable-line react-hooks/set-state-in-effect
   }, [])
 
   function setTheme(id) {

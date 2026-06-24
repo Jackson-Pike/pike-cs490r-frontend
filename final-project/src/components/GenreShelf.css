@@ -6,7 +6,7 @@
 }
 
 .genre-shelf__heading {
-  color: var(--green, rgba(0, 255, 133, 1));
+  color: var(--primary);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;

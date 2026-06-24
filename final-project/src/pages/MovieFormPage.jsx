@@ -6,6 +6,7 @@ import './MovieFormPage.css'
 const API = import.meta.env.VITE_API_URL
 
 const MATURITY_RATINGS = ['G', 'PG', 'PG-13', 'R', 'NC-17', 'NR']
+const GENRES = ['Action', 'Drama', 'Sci-Fi', 'Comedy', 'Thriller', 'Horror', 'Romance', 'Animation', 'Documentary', 'Fantasy']
 
 const EMPTY_FORM = {
   title: '',
@@ -88,7 +89,10 @@ export default function MovieFormPage() {
 
           <div className="mfp__field">
             <label className="mfp__label" htmlFor="genre">Genre</label>
-            <input id="genre" name="genre" className="mfp__input" value={form.genre} onChange={handleChange} />
+            <select id="genre" name="genre" className="mfp__input" value={form.genre} onChange={handleChange}>
+              <option value="">—</option>
+              {GENRES.map((g) => <option key={g} value={g}>{g}</option>)}
+            </select>
           </div>
 
           <div className="mfp__row">

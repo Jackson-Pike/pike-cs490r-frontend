@@ -14,7 +14,7 @@
 
 .auth-page {
   flex: 1;
-  background: #080808;
+  background: var(--bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 255, 133, 0.07) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.07) 0%, transparent 68%);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -45,14 +45,14 @@
   width: 100%;
   max-width: 420px;
   padding: 52px 44px 44px;
-  background: rgba(18, 18, 18, 0.92);
-  border: 1px solid rgba(0, 255, 133, 0.18);
+  background: var(--bg-secondary);
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
   border-radius: 10px;
   backdrop-filter: blur(12px);
   box-shadow:
-    0 0 0 1px rgba(0, 255, 133, 0.04),
+    0 0 0 1px rgba(var(--primary-rgb), 0.04),
     0 24px 64px rgba(0, 0, 0, 0.7),
-    0 0 60px rgba(0, 255, 133, 0.05);
+    0 0 60px rgba(var(--primary-rgb), 0.05);
   animation: card-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
@@ -78,13 +78,13 @@
   font-size: 2rem;
   font-weight: 300;
   letter-spacing: -0.01em;
-  color: var(--white);
+  color: var(--text-h);
   margin: 0 0 4px;
 }
 
 .auth-sub {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-faint);
   margin: 0 0 36px;
 }
 
@@ -117,9 +117,9 @@
   width: 100%;
   background: transparent;
   border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid var(--border);
   padding: 20px 0 8px;
-  color: var(--white);
+  color: var(--text-h);
   font-size: 1rem;
   outline: none;
   box-sizing: border-box;
@@ -135,7 +135,7 @@
   width: 0;
   height: 1px;
   background: var(--primary);
-  box-shadow: 0 0 8px rgba(0, 255, 133, 0.5);
+  box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.5);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -147,7 +147,7 @@
   position: absolute;
   top: 20px;
   left: 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-faint);
   font-size: 0.9rem;
   pointer-events: none;
   transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease, letter-spacing 0.2s ease;
@@ -182,7 +182,7 @@
 }
 
 .auth-submit:hover {
-  box-shadow: 0 0 28px rgba(0, 255, 133, 0.4);
+  box-shadow: 0 0 28px rgba(var(--primary-rgb), 0.4);
 }
 
 .auth-submit:active {
@@ -201,7 +201,7 @@
   margin: 28px 0 0;
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--text-faint);
 }
 
 .auth-footer a {
@@ -251,7 +251,7 @@
   top: 22px;
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--text-subtle);
   cursor: pointer;
   font-size: 0.78rem;
   padding: 4px 0;

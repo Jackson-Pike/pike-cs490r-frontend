@@ -6,6 +6,7 @@ import './MovieDetail.css'
 
 const API = import.meta.env.VITE_API_URL
 const MATURITY_RATINGS = ['G', 'PG', 'PG-13', 'R', 'NC-17', 'NR']
+const GENRES = ['Action', 'Drama', 'Sci-Fi', 'Comedy', 'Thriller', 'Horror', 'Romance', 'Animation', 'Documentary', 'Fantasy']
 
 export default function MovieDetail({ movie }) {
   const navigate = useNavigate()
@@ -221,7 +222,10 @@ export default function MovieDetail({ movie }) {
                   {MATURITY_RATINGS.map((r) => <option key={r} value={r}>{r}</option>)}
                 </select>
                 <input name="runtime" type="number" min="1" className="movie-detail__input movie-detail__input--inline" placeholder="Runtime (min)" value={draft.runtime} onChange={handleDraftChange} />
-                <input name="genre" className="movie-detail__input movie-detail__input--inline" placeholder="Genre" value={draft.genre} onChange={handleDraftChange} />
+                <select name="genre" className="movie-detail__input movie-detail__input--inline" value={draft.genre} onChange={handleDraftChange}>
+                  <option value="">Genre—</option>
+                  {GENRES.map((g) => <option key={g} value={g}>{g}</option>)}
+                </select>
               </>
             ) : (
               <>

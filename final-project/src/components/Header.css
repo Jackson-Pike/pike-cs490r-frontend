@@ -1,14 +1,14 @@
 .header {
-  background-color: var(--bg-dark-secondary);
-  color: var(--white);
+  background-color: var(--bg-secondary);
+  color: var(--text-h);
   padding: 14px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow:
     inset 0 -2px 0 var(--primary),
-    0 4px 14px rgba(0, 255, 133, 0.18),
-    0 8px 28px rgba(0, 255, 133, 0.08);
+    0 4px 14px rgba(var(--primary-rgb), 0.18),
+    0 8px 28px rgba(var(--primary-rgb), 0.08);
   margin-bottom: 20px;
 }
 
@@ -16,12 +16,16 @@
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--text-h);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .header-logo:hover {
+  color: var(--primary);
+}
+
+.logo-accent {
   color: var(--primary);
 }
 
@@ -54,8 +58,8 @@ nav {
 
 .nav-btn:hover,
 .nav-btn:focus-visible {
-  background: rgba(0, 255, 133, 0.08);
-  box-shadow: 0 0 10px rgba(0, 255, 133, 0.22);
+  background: rgba(var(--primary-rgb), 0.08);
+  box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.22);
   outline: none;
 }
 
@@ -67,17 +71,43 @@ nav {
 
 .nav-btn--primary:hover,
 .nav-btn--primary:focus-visible {
-  box-shadow: 0 0 14px rgba(0, 255, 133, 0.4);
+  box-shadow: 0 0 14px rgba(var(--primary-rgb), 0.4);
   color: #0a0a0a;
 }
 
-/* Danger — Logout */
-.nav-btn--danger:hover,
-.nav-btn--danger:focus-visible {
-  border-color: #ff4d4d;
+/* Logout — quiet utility action */
+.nav-logout {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.nav-logout:hover,
+.nav-logout:focus-visible {
   color: #ff4d4d;
-  background: rgba(255, 77, 77, 0.08);
-  box-shadow: 0 0 10px rgba(255, 77, 77, 0.18);
+  outline: none;
+}
+
+/* Browse — plain text nav link */
+.nav-link {
+  color: var(--text-subtle);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--text-h);
+  outline: none;
 }
 
 /* Avatar circle */
@@ -100,5 +130,5 @@ nav {
 }
 
 .nav-avatar:hover {
-  box-shadow: 0 0 0 2px #0a0a0a, 0 0 0 4px var(--primary);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--primary);
 }
