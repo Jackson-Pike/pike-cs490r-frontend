@@ -7,6 +7,7 @@ import SignupPage from './pages/Signup'
 import ProtectedRoute from './components/ProtectedRoute'
 import MovieDetailPage from './pages/MovieDetailPage'
 import ProfilePage from './pages/ProfilePage'
+import MovieFormPage from './pages/MovieFormPage'
 import './App.css'
 
 export default function App() {
@@ -19,6 +20,11 @@ export default function App() {
             <ProtectedRoute>
               <MovieListPage />
             </ProtectedRoute>}/>
+          <Route path="/movies/new" element={
+            <ProtectedRoute>
+              <MovieFormPage />
+            </ProtectedRoute>
+          } />
           <Route path="/movies/:id" element={
             <ProtectedRoute>
               <MovieDetailPage />
