@@ -2,13 +2,13 @@
 
 .movie-detail__back-row {
     padding: 20px clamp(24px, 6vw, 120px) 0;
-    background-color: var(--bg-dark);
+    background-color: var(--bg);
 }
 
 .movie-detail__back-btn {
     background: transparent;
-    border: 1px solid rgba(0, 255, 133, 0.3);
-    color: rgba(0, 255, 133, 0.8);
+    border: 1px solid rgba(var(--primary-rgb), 0.3);
+    color: rgba(var(--primary-rgb), 0.8);
     font-size: 0.78rem;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -20,9 +20,9 @@
 }
 
 .movie-detail__back-btn:hover {
-    border-color: rgba(0, 255, 133, 0.7);
+    border-color: rgba(var(--primary-rgb), 0.7);
     color: var(--primary);
-    background: rgba(0, 255, 133, 0.06);
+    background: rgba(var(--primary-rgb), 0.06);
 }
 
 /* ─── Movie Detail Layout ────────────────────────────────────────────────── */
@@ -36,8 +36,8 @@
     padding: 48px clamp(24px, 6vw, 120px);
     box-sizing: border-box;
     min-height: calc(100vh - 80px); /* offset for header */
-    background-color: var(--bg-dark);
-    color: var(--white);
+    background-color: var(--bg);
+    color: var(--text-h);
 }
 
 
@@ -54,11 +54,10 @@
     border-radius: 8px;
     overflow: hidden;
 
-    /* Matches the card aesthetic — low-opacity green border, soft glow */
-    border: 1px solid rgba(0, 255, 133, 0.2);
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.7),
-        0 0 0 0 rgba(0, 255, 133, 0);
+        0 0 0 0 rgba(var(--primary-rgb), 0);
 
     transition:
         box-shadow 0.3s ease,
@@ -66,10 +65,10 @@
 }
 
 .movie-detail__poster-frame:hover {
-    border-color: rgba(0, 255, 133, 0.4);
+    border-color: rgba(var(--primary-rgb), 0.4);
     box-shadow:
         0 8px 32px rgba(0, 0, 0, 0.75),
-        0 0 24px rgba(0, 255, 133, 0.12);
+        0 0 24px rgba(var(--primary-rgb), 0.12);
 }
 
 .movie-detail__poster-img {
@@ -111,13 +110,13 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.02em;
-    color: var(--white);
+    color: var(--text-h);
 }
 
 .movie-detail__year {
     font-size: 1.1rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-subtle);
     letter-spacing: 0.02em;
     white-space: nowrap;
 }
@@ -138,18 +137,18 @@
     align-items: center;
     padding: 3px 9px;
     border-radius: 4px;
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    border: 1.5px solid var(--border);
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--text-subtle);
 }
 
 /* Plain metadata pills */
 .movie-detail__fact {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-subtle);
     letter-spacing: 0.02em;
 }
 
@@ -158,12 +157,12 @@
 .movie-detail__badge + .movie-detail__fact::before {
     content: '·';
     margin-right: 10px;
-    color: rgba(255, 255, 255, 0.2);
+    color: var(--text-faint);
 }
 
-/* Genre gets a subtle green tint */
+/* Genre gets a primary color tint */
 .movie-detail__fact--genre {
-    color: rgba(0, 255, 133, 0.7);
+    color: rgba(var(--primary-rgb), 0.7);
 }
 
 
@@ -173,8 +172,8 @@
     height: 1px;
     background: linear-gradient(
         to right,
-        rgba(0, 255, 133, 0.25) 0%,
-        rgba(0, 255, 133, 0.06) 60%,
+        rgba(var(--primary-rgb), 0.25) 0%,
+        rgba(var(--primary-rgb), 0.06) 60%,
         transparent 100%
     );
 }
@@ -210,7 +209,7 @@
 .movie-detail__value {
     margin: 0;
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.82);
+    color: var(--text-h);
     line-height: 1.5;
 }
 
@@ -229,7 +228,7 @@
     margin: 0;
     font-size: 0.97rem;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--text);
     max-width: 68ch;
 }
 
@@ -245,7 +244,6 @@
 
     .movie-detail__poster-col {
         position: static;
-        /* Constrain poster width so it doesn't go full-bleed on mobile */
         max-width: 220px;
         margin: 0 auto;
     }
@@ -265,4 +263,109 @@
         gap: 32px;
         padding: 36px clamp(20px, 4vw, 60px);
     }
+}
+
+/* ─── Admin Buttons ──────────────────────────────────────────────────────── */
+
+.movie-detail__admin-row,
+.movie-detail__edit-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.movie-detail__admin-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.movie-detail__admin-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.movie-detail__admin-btn--save {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #0a0a0a;
+}
+
+.movie-detail__admin-btn--save:hover:not(:disabled) {
+  box-shadow: 0 0 12px rgba(var(--primary-rgb), 0.4);
+  color: #0a0a0a;
+}
+
+.movie-detail__admin-btn--danger:hover:not(:disabled) {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.movie-detail__admin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.movie-detail__confirm-label {
+  font-size: 0.82rem;
+  color: var(--text-subtle);
+}
+
+.movie-detail__save-error {
+  font-size: 0.82rem;
+  color: #ff4d4d;
+}
+
+/* ─── Edit-mode inputs ───────────────────────────────────────────────────── */
+
+.movie-detail__input {
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-h);
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 7px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.movie-detail__input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+/* Inline inputs (facts row) don't take full width */
+.movie-detail__input--inline {
+  width: auto;
+  flex: 1;
+  min-width: 80px;
+  max-width: 160px;
+}
+
+.movie-detail__title-input {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  width: 100%;
+}
+
+.movie-detail__textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+.movie-detail__poster-url-field {
+  margin-top: 12px;
 }
