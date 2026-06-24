@@ -221,3 +221,43 @@
     animation: none;
   }
 }
+
+/* ── Error state: red underline (always full-width) ─ */
+
+.input-group.input-error::after {
+  width: 100%;
+  background: #ff4d4d;
+  box-shadow: 0 0 8px rgba(255, 77, 77, 0.5);
+}
+
+/* ── Per-field inline error message ─────────────── */
+
+.field-error {
+  display: block;
+  font-size: 0.72rem;
+  color: #ff6b6b;
+  margin-top: 4px;
+}
+
+/* ── Password field with toggle button ──────────── */
+
+.input-group input.has-toggle {
+  padding-right: 48px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0;
+  top: 22px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: var(--green);
+}
