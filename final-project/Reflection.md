@@ -1,3 +1,32 @@
+### Final Project - Reflection.md 
+
+1. **What did you ask the AI to do?**
+    As we got later on in the project, and as the views and flows got more complicated, AI really started becoming a critical companion
+    and enabled AI driven development. I utilized agents, design and implementation plans, and subagent driven development to manage tokens,
+    context engineering, and overall try to provide a more structured, appropriate output. These agents often had review steps which validated
+    or critiqued the work of the agent to scan for bugs and inconsistencies. 
+
+2. **What did it do well?**
+    AI is great at a lot of things. It has a wide knowledge of patterns and an ability to implement just about all that you could want. It did well 
+    with the API - interfacing with the backend and learning what it provided and what the frontend could consume. In the right modes, it was good
+    at asking clarifying questions as well, rather than immediately assuming and jumping straight to implementation. It often surfaced
+    questions that I hadn't even thought about. 
+
+3. **What did it get wrong or what did you have to fix?**
+    Sometimes, on particular things, it would get really bogged down or stuck on certain features or additions. Below I mentioned the horizontal scroll
+    shelfs - it really struggled getting that right. In completing this final project, I used superpowers to attempt to create / implement a 'theme' feature
+    that would allow preset theme changes to change the colors, fonts, and look and feel of the site. While it overall came up with a good plan and implementation,
+    there were a lot of things that ended up missing once the code was written. Certain elements of the existing theme that weren't picked up or changed, etc. 
+    Large features like this if not broken down into the right chunks, or done with the right model, leads to worse output and increased iterations. 
+4. **What did you learn from working with it?**
+    I continue to learn the workings of AI, prompt and context engineering, and overal how to orchestrate AI and agents in order to build strong, robust code. 
+    It clearly accelerates build velocity. However, I also learned its limitations, such as those that I've briefly described here. Overall, its additional clarity
+    to me that there will always be a need for the devloper. What that role expands to look like in the future is still not 100% clear to anyone I don't think, 
+    but I do know that AI is a great tool, but needs the person to use the tool in the right way. 
+
+
+
+### Prior
 1. **What did you ask the AI to do?**
     For the most part, throughout the intitial development, I would ask it to give me tips and tricks, or help me understand how to do a specific thing, 
     but to let me write the code. I actually changed the 'output style' to learning, and instructed it to give me opportunities to learn and apply. 

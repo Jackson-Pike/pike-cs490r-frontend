@@ -397,6 +397,12 @@
   background: rgba(var(--primary-rgb), 0.03);
 }
 
+.reviews__card--own {
+  border-color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.07);
+  box-shadow: 0 0 0 1px rgba(var(--primary-rgb), 0.25);
+}
+
 .reviews__card-header {
   display: flex;
   align-items: baseline;

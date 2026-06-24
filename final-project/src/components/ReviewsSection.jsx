@@ -13,10 +13,19 @@ function formatDate(iso) {
   })
 }
 
+function authorId(review) {
+  const u = review.user_id
+  return typeof u === 'object' && u !== null ? u._id : u
+}
+
 function authorLabel(review, currentUser) {
-  if (currentUser && review.user_id === currentUser._id) return 'You'
-  const tail = review.user_id.slice(-4)
-  return `User …${tail}`
+  if (currentUser && authorId(review) === currentUser._id) return 'You'
+  const u = review.user_id
+  if (typeof u === 'object' && u !== null) {
+    const name = [u.first_name, u.last_name].filter(Boolean).join(' ')
+    return name || u.username || `User …${String(u._id).slice(-4)}`
+  }
+  return `User …${String(u).slice(-4)}`
 }
 
 function StarRating({ value }) {
@@ -150,13 +159,13 @@ function ReviewForm({ initial, onSubmit, onCancel, submitLabel }) {
   )
 }
 
-function ReviewCard({ review, currentUser, token, onUpdated, onDeleted }) {
+function ReviewCard({ review, currentUser, token, onUpdated, onDeleted, isOwn }) {
   const [editing, setEditing] = useState(false)
   const [confirmDelete, setConfirmDelete] = useState(false)
   const [deleting, setDeleting] = useState(false)
   const [deleteError, setDeleteError] = useState(null)
 
-  const isOwner = currentUser && review.user_id === currentUser._id
+  const isOwner = currentUser && authorId(review) === currentUser._id
   const isAdmin = currentUser?.role === 'admin'
   const canModify = isOwner || isAdmin
 
@@ -211,7 +220,7 @@ function ReviewCard({ review, currentUser, token, onUpdated, onDeleted }) {
   }
 
   return (
-    <div className="reviews__card">
+    <div className={`reviews__card${isOwn ? ' reviews__card--own' : ''}`}>
       <div className="reviews__card-header">
         <StarRating value={review.rating} />
         <span className="reviews__author">{authorLabel(review, currentUser)}</span>
@@ -295,7 +304,7 @@ export default function ReviewsSection({ movieId }) {
     fetchReviews()
   }, [fetchReviews])
 
-  const userReview = user ? reviews.find((r) => r.user_id === user._id) : null
+  const userReview = user ? reviews.find((r) => authorId(r) === user._id) : null
 
   async function handleCreate(body) {
     const res = await fetch(`${API}/api/movies/${movieId}/reviews`, {
@@ -385,17 +394,24 @@ export default function ReviewsSection({ movieId }) {
 
           {!loading && !fetchError && reviews.length > 0 && (
             <ul className="reviews__list">
-              {reviews.map((review) => (
-                <li key={review._id}>
-                  <ReviewCard
-                    review={review}
-                    currentUser={user}
-                    token={token}
-                    onUpdated={handleUpdated}
-                    onDeleted={handleDeleted}
-                  />
-                </li>
-              ))}
+              {[...reviews]
+                .sort((a, b) => {
+                  const aIsMe = user && authorId(a) === user._id
+                  const bIsMe = user && authorId(b) === user._id
+                  return aIsMe ? -1 : bIsMe ? 1 : 0
+                })
+                .map((review) => (
+                  <li key={review._id}>
+                    <ReviewCard
+                      review={review}
+                      currentUser={user}
+                      token={token}
+                      onUpdated={handleUpdated}
+                      onDeleted={handleDeleted}
+                      isOwn={user && authorId(review) === user._id}
+                    />
+                  </li>
+                ))}
             </ul>
           )}
         </div>
