@@ -16,6 +16,8 @@ export default function SignupPage() {
   const { login } = useAuth()
   const navigate = useNavigate()
 
+  const passwordsMatch = password === confirmPassword
+
   function validate() {
     const errors = {}
 
@@ -185,6 +187,11 @@ export default function SignupPage() {
               >
                 {showConfirm ? 'Hide' : 'Show'}
               </button>
+            {confirmPassword.length > 0 && (
+              <span className={`password-match-hint${passwordsMatch ? ' match' : ' no-match'}`}>
+                {passwordsMatch ? '✓ Passwords match' : '✗ Passwords don\'t match yet'}
+              </span>
+            )}
             {fieldErrors.confirmPassword && (
               <span className="field-error">{fieldErrors.confirmPassword}</span>
             )}
