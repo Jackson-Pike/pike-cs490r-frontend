@@ -14,10 +14,9 @@ function formatDate(iso) {
 }
 
 function memberSince(user) {
-  // Use createdAt if present; otherwise derive from MongoDB ObjectId timestamp
   if (user.createdAt) return formatDate(user.createdAt)
-  const ts = parseInt(user._id.slice(0, 8), 16) * 1000
-  return formatDate(new Date(ts))
+  const ts = parseInt(user._id?.slice(0, 8) ?? '', 16) * 1000
+  return isNaN(ts) ? 'Unknown' : formatDate(new Date(ts))
 }
 
 export default function ProfilePage() {
@@ -29,6 +28,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     async function load() {
+      if (!token || !authUser) return
       setLoading(true)
       setError(null)
       try {
@@ -44,7 +44,7 @@ export default function ProfilePage() {
       }
     }
     load()
-  }, [token, authUser])
+  }, [token, authUser?._id])
 
   if (loading) return <p className="profile__status">Loading profile…</p>
   if (error) return <p className="profile__status profile__status--error">{error}</p>
