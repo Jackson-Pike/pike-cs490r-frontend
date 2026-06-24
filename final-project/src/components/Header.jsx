@@ -21,9 +21,9 @@ export default function PikeHeader() {
           <>
             {!isActive && <Link to="/" className="nav-btn">All Movies</Link>}
             <button onClick={logout} className="nav-btn nav-btn--danger">Logout</button>
-            <div className="nav-avatar" title={user.username}>
+            <Link to="/profile" className="nav-avatar" title={`${user.username} — view profile`}>
               {getInitials(user.username)}
-            </div>
+            </Link>
           </>
         ) : (
           <>
