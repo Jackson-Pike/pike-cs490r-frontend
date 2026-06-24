@@ -18,4 +18,8 @@ export default defineConfig([globalIgnores(['dist']), {
     globals: globals.browser,
     parserOptions: { ecmaFeatures: { jsx: true } },
   },
+}, {
+  // Config files run in Node, so allow Node globals like __dirname
+  files: ['**/*.config.{js,mjs}'],
+  languageOptions: { globals: globals.node },
 }, ...storybook.configs["flat/recommended"]])

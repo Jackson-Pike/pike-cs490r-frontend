@@ -3,11 +3,7 @@
   margin: 0;
   padding: 0;
 }
-.header {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 16px 24px;
-}
+
 
 .header h1 {
   margin: 0;
@@ -16,16 +12,16 @@
 
 body {
   font-family: sans-serif;
-  background: #f5f5f5;
+  background: #121212;
   color: #333;
+
+  /* Lock the page horizontally: only the genre shelves are allowed to
+     scroll sideways. Without this, a wide shelf row pushes the whole
+     page wider than the viewport and you get one big page-level scroll. */
+  overflow-x: hidden;
 }
 
-.content {
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
-}
+
 
 h1 {
   font-size: 2rem;

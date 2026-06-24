@@ -1,4 +1,11 @@
 :root {
+  /* App color palette */
+  --green: #00ff85;
+  --blue: #2e8eff;
+  --bg-dark: #121212;
+  --bg-dark-secondary: #1a1a1a;
+  --white: #ffffff;
+
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
@@ -57,6 +64,7 @@ body {
 #root {
   width: 100%;
   max-width: 100%;
+  min-width: 0;            /* allow children's overflow to contain, not expand */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -105,4 +113,35 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* ───────────────────────────────────────────────
+   Reusable loading skeleton
+   A gray block with a green-tinted highlight sweeping
+   across it. Shared by MoviePoster (per-image) and
+   GenreShelfSkeleton (per-fetch).
+   ─────────────────────────────────────────────── */
+.skeleton {
+  background-color: rgba(255, 255, 255, 0.06);
+  background-image: linear-gradient(
+    100deg,
+    transparent 30%,
+    rgba(0, 255, 133, 0.08) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Respect users who ask the OS to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
 }

@@ -1,0 +1,22 @@
+/* MovieListPage — shelf layout (desktop) */
+
+main.content {
+  padding: 32px 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Loading / error text */
+.content__status {
+  padding: 0 clamp(24px, 6vw, 120px);
+  color: var(--white, #fff);
+}
+
+/* Mobile — shelves still scroll horizontally, just narrower cards.
+   The GenreShelf component's own media query handles the card sizing. */
+@media (max-width: 600px) {
+  main.content {
+    padding: 20px 0;
+  }
+}

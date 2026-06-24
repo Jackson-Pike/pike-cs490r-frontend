@@ -1,0 +1,60 @@
+.genre-shelf {
+  margin-bottom: 48px;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.genre-shelf__heading {
+  color: var(--green, rgba(0, 255, 133, 1));
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  padding: 0 32px;
+}
+
+.genre-shelf__row {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  gap: 18px;
+  padding: 8px 32px 18px;
+
+  /* Hide scrollbar visually, keep it functional */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  scroll-snap-type: x proximity;
+}
+
+.genre-shelf__row::-webkit-scrollbar {
+  display: none;                /* Chrome/Safari */
+}
+
+.genre-shelf__item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 200px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* On mobile, shelves collapse to a narrower card size */
+@media (max-width: 600px) {
+  .genre-shelf__item {
+    width: 150px;
+  }
+
+  .genre-shelf__heading {
+    padding: 0 16px;
+  }
+
+  .genre-shelf__row {
+    padding: 8px 16px 16px;
+    gap: 12px;
+  }
+}
