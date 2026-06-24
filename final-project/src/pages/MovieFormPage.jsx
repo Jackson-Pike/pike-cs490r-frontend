@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 import './MovieFormPage.css'
 
@@ -19,11 +19,13 @@ const EMPTY_FORM = {
 }
 
 export default function MovieFormPage() {
-  const { token } = useAuth()
+  const { token, user } = useAuth()
   const navigate = useNavigate()
   const [form, setForm] = useState(EMPTY_FORM)
   const [error, setError] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+
+  if (!user || user.role !== 'admin') return <Navigate to="/" replace />
 
   function handleChange(e) {
     const { name, value } = e.target
