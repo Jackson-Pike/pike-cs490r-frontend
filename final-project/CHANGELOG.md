@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-06-23 — Reviews CRUD + Profile Page
+
+### Branch: `final-frontend`
+
+#### Reviews section (`src/components/ReviewsSection.jsx / .css`)
+
+Full CRUD for the Review model on every movie detail page:
+
+- **Create** — write a review with a 10-star click input (each star = 1 point out of 10) and a text field (2000 char limit with live counter)
+- **Read** — community reviews listed in the right column with star ratings, author, and date
+- **Update** — edit your own review in-place
+- **Delete** — delete with a confirm step; admins can delete any review
+- Average rating displayed in the section header with a glowing amber score and star breakdown
+- Write panel has a green left-border accent and tighter spacing to stand out from the list
+
+#### Profile page (`src/pages/ProfilePage.jsx / .css`)
+
+New `/profile` route, accessible by clicking the avatar circle in the top-right header:
+
+- Displays username, email, and member-since date (derived from the stored user object — no extra API call)
+- Shows all of the user's reviews across every movie, with the movie title linking back to its detail page
+- Amber review-count badge in the info card
+- Backend: added `GET /api/users/me/reviews` to `reviewRoutes.js` — authenticated, returns reviews with movie title populated via Mongoose `.populate('movie_id', 'title')`
+
+#### Styling
+
+- Added `--amber: #f4a229` as a second accent color (alongside `--green: #00ff85`)
+- Amber used for all star ratings and score numbers throughout the app
+- Green remains the primary interactive color (buttons, borders, inputs, labels)
+
+---
+
 ## 2026-06-06 — Auth MVP + Poster Seed Script
 
 ### Context
