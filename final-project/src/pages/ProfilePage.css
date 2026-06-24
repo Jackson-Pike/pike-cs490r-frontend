@@ -15,7 +15,7 @@
   gap: 20px;
   background: rgba(0, 255, 133, 0.04);
   border: 1px solid rgba(0, 255, 133, 0.2);
-  border-left: 3px solid var(--green);
+  border-left: 3px solid var(--primary);
   border-radius: 8px;
   padding: 20px 24px;
   margin-bottom: 36px;
@@ -25,7 +25,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--green);
+  background: var(--primary);
   color: #0a0a0a;
   font-size: 1rem;
   font-weight: 700;
@@ -95,7 +95,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--primary);
   opacity: 0.7;
 }
 
@@ -146,7 +146,7 @@
 }
 
 .profile__movie-title:hover {
-  color: var(--green);
+  color: var(--primary);
 }
 
 .profile__review-rating {

@@ -1,6 +1,6 @@
 :root {
   /* App color palette */
-  --green: #00ff85;
+  --amber: #f4a229;
   --blue: #2e8eff;
   --bg-dark: #121212;
   --bg-dark-secondary: #1a1a1a;
@@ -126,7 +126,7 @@ code {
   background-image: linear-gradient(
     100deg,
     transparent 30%,
-    rgba(0, 255, 133, 0.08) 50%,
+    rgba(255, 255, 255, 0.08) 50%,
     transparent 70%
   );
   background-size: 200% 100%;
