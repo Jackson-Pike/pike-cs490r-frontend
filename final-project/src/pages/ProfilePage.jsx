@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
+import { useTheme } from '../hooks/useTheme'
 import './ProfilePage.css'
 
 const API = import.meta.env.VITE_API_URL
@@ -21,6 +22,7 @@ function memberSince(user) {
 
 export default function ProfilePage() {
   const { token, user: authUser } = useAuth()
+  const { theme, setTheme, themes } = useTheme()
 
   const [reviews, setReviews] = useState([])
   const [loading, setLoading] = useState(true)
@@ -68,6 +70,31 @@ export default function ProfilePage() {
           <span className="profile__stat-num">{reviews.length}</span>
           <span className="profile__stat-label">{reviews.length === 1 ? 'Review' : 'Reviews'}</span>
         </div>
+      </section>
+
+      {/* Appearance */}
+      <section className="profile__appearance">
+        <h2 className="profile__appearance-heading">Appearance</h2>
+        <div className="profile__swatches">
+          {themes.map((t) => (
+            <button
+              key={t.id}
+              className={`profile__swatch${theme === t.id ? ' profile__swatch--active' : ''}`}
+              style={{ '--swatch-color': t.swatch, '--swatch-bg': t.bg }}
+              onClick={() => setTheme(t.id)}
+              title={t.label}
+              aria-label={`Switch to ${t.label} theme${theme === t.id ? ' (current)' : ''}`}
+              aria-pressed={theme === t.id}
+            >
+              {theme === t.id && (
+                <span className="profile__swatch-check" aria-hidden="true">✓</span>
+              )}
+            </button>
+          ))}
+        </div>
+        <p className="profile__appearance-label">
+          {themes.find((t) => t.id === theme)?.label}
+        </p>
       </section>
 
       {/* Reviews */}
