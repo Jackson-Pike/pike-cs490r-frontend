@@ -1,0 +1,112 @@
+/* ─────────────────────────────────────────────────────
+   View Transition — circular ripple override
+   ───────────────────────────────────────────────────── */
+
+@keyframes theme-ripple {
+  from { clip-path: circle(0% at 50% 50%); }
+  to   { clip-path: circle(150% at 50% 50%); }
+}
+
+::view-transition-new(root) {
+  animation: theme-ripple 0.45s ease-out;
+}
+
+/* Keep the outgoing snapshot underneath, no fade */
+::view-transition-old(root) {
+  animation: none;
+}
+
+/* ─────────────────────────────────────────────────────
+   1. Dark Cinema (default)
+   ───────────────────────────────────────────────────── */
+
+[data-theme="dark-cinema"] {
+  --bg:                #121212;
+  --bg-secondary:      #1a1a1a;
+  --bg-dark:           #121212;
+  --bg-dark-secondary: #1a1a1a;
+  --text:              #9ca3af;
+  --text-h:            #f3f4f6;
+  --primary:           #00ff85;
+  --border:            rgba(255, 255, 255, 0.08);
+  --shadow:            rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+                       rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  --sans:              system-ui, 'Segoe UI', sans-serif;
+  --heading:           system-ui, 'Segoe UI', sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────
+   2. Vintage Hollywood
+   ───────────────────────────────────────────────────── */
+
+[data-theme="vintage-hollywood"] {
+  --bg:                #f5f0e8;
+  --bg-secondary:      #ede7d9;
+  --bg-dark:           #2a1f14;
+  --bg-dark-secondary: #3a2d1f;
+  --text:              #4a3728;
+  --text-h:            #1a0f00;
+  --primary:           #c9a84c;
+  --border:            rgba(74, 55, 40, 0.2);
+  --shadow:            rgba(74, 55, 40, 0.15) 0 10px 15px -3px,
+                       rgba(74, 55, 40, 0.08) 0 4px 6px -2px;
+  --sans:              'Lora', Georgia, serif;
+  --heading:           'Playfair Display', Georgia, serif;
+}
+
+/* ─────────────────────────────────────────────────────
+   3. Streaming Service
+   ───────────────────────────────────────────────────── */
+
+[data-theme="streaming-service"] {
+  --bg:                #0a0a0a;
+  --bg-secondary:      #141414;
+  --bg-dark:           #000000;
+  --bg-dark-secondary: #0a0a0a;
+  --text:              #a3a3a3;
+  --text-h:            #ffffff;
+  --primary:           #e50914;
+  --border:            rgba(255, 255, 255, 0.1);
+  --shadow:            rgba(0, 0, 0, 0.6) 0 10px 15px -3px,
+                       rgba(0, 0, 0, 0.4) 0 4px 6px -2px;
+  --sans:              'Inter', system-ui, sans-serif;
+  --heading:           'Anton', system-ui, sans-serif;
+}
+
+/* ─────────────────────────────────────────────────────
+   4. Retro VHS
+   ───────────────────────────────────────────────────── */
+
+[data-theme="retro-vhs"] {
+  --bg:                #0d0015;
+  --bg-secondary:      #150020;
+  --bg-dark:           #080010;
+  --bg-dark-secondary: #0d0015;
+  --text:              #b09fc0;
+  --text-h:            #e8d5f5;
+  --primary:           #00f5e4;
+  --border:            rgba(176, 159, 192, 0.2);
+  --shadow:            rgba(0, 0, 0, 0.7) 0 10px 15px -3px,
+                       rgba(0, 0, 0, 0.5) 0 4px 6px -2px;
+  --sans:              'Share Tech Mono', monospace;
+  --heading:           'VT323', monospace;
+}
+
+/* ─────────────────────────────────────────────────────
+   5. Clean Light
+   ───────────────────────────────────────────────────── */
+
+[data-theme="clean-light"] {
+  --bg:                #ffffff;
+  --bg-secondary:      #f8f8fa;
+  --bg-dark:           #f0f0f4;
+  --bg-dark-secondary: #e8e8ee;
+  --text:              #6b7280;
+  --text-h:            #111827;
+  --primary:           #6366f1;
+  --border:            rgba(17, 24, 39, 0.12);
+  --shadow:            rgba(17, 24, 39, 0.1) 0 10px 15px -3px,
+                       rgba(17, 24, 39, 0.05) 0 4px 6px -2px;
+  --sans:              'Plus Jakarta Sans', system-ui, sans-serif;
+  --heading:           'Plus Jakarta Sans', system-ui, sans-serif;
+}
