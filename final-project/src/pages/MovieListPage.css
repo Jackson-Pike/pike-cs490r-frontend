@@ -10,7 +10,7 @@ main.content {
 /* Loading / error text */
 .content__status {
   padding: 0 clamp(24px, 6vw, 120px);
-  color: var(--white, #fff);
+  color: var(--text-h);
 }
 
 /* Mobile — shelves still scroll horizontally, just narrower cards.
@@ -19,4 +19,27 @@ main.content {
   main.content {
     padding: 20px 0;
   }
+}
+
+.content__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 clamp(24px, 6vw, 120px) 16px;
+}
+
+.content__add-btn {
+  background: var(--primary);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 4px;
+  font: 600 0.8rem/1 inherit;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.content__add-btn:hover {
+  box-shadow: 0 0 14px rgba(var(--primary-rgb), 0.4);
 }
