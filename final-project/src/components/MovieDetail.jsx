@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import ReviewsSection from './ReviewsSection'
 import './MovieDetail.css'
 
 export default function MovieDetail({ movie }) {
@@ -84,6 +85,8 @@ export default function MovieDetail({ movie }) {
                         <p className="movie-detail__synopsis">{movie.synopsis}</p>
                     </div>
                 )}
+
+                <ReviewsSection movieId={movie._id} />
             </div>
         </article>
         </>
